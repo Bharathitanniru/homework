@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Manipulation</title>
+    
+    <style>
+        .container {
+            display: inline;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .textbox {
+            width: 400px;
+            height: 200px;
+            border: 1px solid #000;
+            padding: 10px;
+        }
+
+        .button {
+            background-color: blue;
+            color:white;
+            padding: 10px 20px;
+            border: none;
+            margin: 5px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        #text {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="textbox" id="text">
+            Hi this is Vijaya Bharathi Tanniru.I did my masters in Acharya Nagarjuna University, Guntur.Now I am learning Javascript string and array methods.Very much excited for further learnings.Thanks
+        </div>
+    </div>
+    
+    <button class="button" id="uppercase">Uppercase</button>
+    <button class="button" id="lowercase">Lowercase</button>
+    <button class="button" id="capitalize">Capitalize</button>
+    <button class="button" id="reset">Reset</button><br>
+    <button class="button" id="reverse">Reverse</button>
+    <button class="button" id="replace">Replace</button>
+    
+
+
+<script>
+    // Get references to the HTML elements
+    const textElement = document.getElementById("text");
+    const uppercaseButton= document.getElementById("uppercase");
+    const lowercaseButton = document.getElementById("lowercase");
+    const capitalizeButton = document.getElementById("capitalize");
+    const resetButton = document.getElementById("reset");
+    const reverseButton= document.getElementById("reverse")
+    const replaceButton= document.getElementById("replace")
+
+    // Add event listeners to the buttons
+    uppercaseButton.addEventListener("click", () => {
+        textElement.textContent = textElement.textContent.toUpperCase();
+    });
+
+    lowercaseButton.addEventListener("click", () => {
+        textElement.textContent = textElement.textContent.toLowerCase();
+    });
+
+    capitalizeButton.addEventListener("click", () => {
+        const words = textElement.textContent.split(" ");
+        for (let i = 0; i < words.length; i++) {
+            words[i] = words[i][0].toUpperCase() + words[i].substring(1);
+        }
+        textElement.textContent = words.join(" ");
+    });
+    reverseButton.addEventListener("click", () => {
+            textElement.textContent = textElement.textContent.split('').reverse().join('');
+        });
+
+        replaceButton.addEventListener("click", () => {
+            const textToReplace = "I";
+            const replacementText = "Bharathi";
+            textElement.textContent = textElement.textContent.replace(textToReplace, replacementText);
+        });
+
+    resetButton.addEventListener("click", () => {
+        textElement.textContent = "Hi this is Vijaya Bharathi Tanniru.I did my masters in Acharya Nagarjuna University, Guntur.Now i am learning Javascript string and array methods.Very much excited for further learnings.Thanks";
+    });
+</script>
+</body>
+</html>
