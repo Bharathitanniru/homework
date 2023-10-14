@@ -1,0 +1,33 @@
+/* style.css */
+#taskList {
+    margin-top: 20px;
+}
+
+#taskInput {
+    width: 60%;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+#addTask {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#taskList div {
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Style for the delete button */
+#taskList div button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
